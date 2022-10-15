@@ -80,6 +80,7 @@ function createColonDiv() {
     const colonDiv = document.createElement("div");
     colonDiv.innerHTML = ":";
     colonDiv.classList.add("colon");
+    colonsArray.push(colonDiv);
     return colonDiv;
 }
 

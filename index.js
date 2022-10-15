@@ -2,6 +2,10 @@ let timeDisplay = document.getElementById("time");
 
 let timezoneCards = [];
 
+let colonsArray = [];
+
+let colonAreVisible = true;
+
 let isLiveTime = true;
 
 let wheelIsFree = true;
@@ -18,6 +22,20 @@ function refreshTime() {
     if (isLiveTime) {
         refreshTimeForAllCards();
     }
+
+    toggleColons();
+}
+
+function toggleColons() {
+    colonsArray.forEach(colon => {
+        if (colonAreVisible) {
+            colon.className = "colon-off";
+        } else {
+            colon.className = "colon";
+        }
+    });
+
+    colonAreVisible = !colonAreVisible;
 }
 
 function refreshTimeForAllCards() {
