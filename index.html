@@ -10,13 +10,16 @@
         <div class="cards-holder" id="timezonesCardHolder">
         </div>
 
-        <button class="float" onclick="openForm()" id="addTimezoneButton">+</button>
+        <button class="new-timezone-button" onclick="openForm()" id="addTimezoneButton">+</button>
 
-        <div id="myForm" class="form-popup">
+        <div id="myForm" class="form-popup-off">
             <div class="form-container">
-                <form class="form">
+                <div class="timezone-label-container">
                     <label class="timezone-select-label" for="timezones">Choose a timezone</label>
-                    <select class="select" name="timezones" id="timezonesSelect"></select>
+                </div>
+                <form class="form">
+                    <input class="timezone-input" type="text" id="timezoneInput" list="timezonesSelect">
+                    <datalist name="timezones" id="timezonesSelect"></datalist>           
                 </form>
                 <div class="buttons-holder">
                     <button type="button" class="add-button" onclick="addTimezoneCard()">Add</button>

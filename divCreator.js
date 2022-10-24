@@ -17,7 +17,6 @@ function createInfoDiv() {
     const deleteButton = createDeleteButton();
     infoDiv.append(deleteButton);
     infoDiv.deleteButton = deleteButton;
-    infoDiv.deleteButton.style.visibility = "hidden";
     
     infoDiv.classList.add("timezone-info");
     infoDiv.onmouseover = handleOnTimezoneInfoMouseOver;
@@ -113,7 +112,7 @@ function createTimezoneNameParagraph() {
 
 function createDeleteButton() {
     const button = document.createElement("button");
-    button.classList.add("remove-button");
+    button.classList.add("remove-button-off");
     button.innerHTML = "X";
     
     button.onclick = function() {

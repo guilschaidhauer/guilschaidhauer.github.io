@@ -1,13 +1,36 @@
 const timezoneList = new Map([
-    ['Asia/Tokyo','Tokyo'],
-    ['Asia/Shanghai','Shanghai'],
-    ['Asia/Kolkata','Kolkata'],
-    ['Europe/Berlin','Berlin'],
-    ['Europe/London','London'],
-    ['Europe/Rome','Rome'],
-    ['America/Sao_Paulo','São Paulo'],
-    ['America/New_York','New York'],
-    ['America/Los_Angeles','Los Angeles']
+    ['Australia/Melbourne', 'Melbourne'],
+    ['Australia/Sydney', 'Sydney'],
+
+    ['Asia/Tokyo', 'Tokyo'],
+    ['Asia/Seoul', 'Seoul'],
+
+    ['Asia/Taipei', 'Taipei'],
+    ['Asia/Shanghai', 'Beijing'],
+    ['Asia/Hong_Kong', 'Hong Kong'],
+
+    ['Asia/Kolkata', 'Bangalore'],
+
+    ['Europe/Paris', 'Paris'],
+    ['Europe/Berlin', 'Walldorf'],
+    ['Europe/Budapest', 'Budapest'],
+    ['Europe/Madrid', 'Madrid'],
+    ['Europe/Zurich', 'Zurich'],
+    ['Europe/Rome', 'Rome'],
+
+    ['Europe/London', 'London'],
+    ['Europe/Dublin', 'Dublin'],
+
+    ['America/Sao_Paulo', 'São Leopoldo'],
+    ['America/Argentina/Buenos_Aires', 'Buenos Aires'],
+
+    ['America/Manaus', 'Manaus'],
+
+    ['America/Vancouver', 'Vancouver'],
+    ['America/Toronto', 'Toronto'],
+    ['America/New_York', 'New York'],
+
+    ['America/Los_Angeles', 'Los Angeles']
   ]);
   
 const timezoneCardColorsList = [
@@ -16,11 +39,11 @@ const timezoneCardColorsList = [
         white: true
     },
     {
-        color: '#071117',
+        color: '#060d1a',
         white: true
     },
     {
-        color: '#060d1a',
+        color: '#071117',
         white: true
     },
     {
@@ -60,7 +83,7 @@ const timezoneCardColorsList = [
         white: false
     },
     {
-        color: '#f7e58b',
+        color: '#ebd980',
         white: false
     },
     {
@@ -116,7 +139,15 @@ function initializeTimezoneList() {
   
     timezoneList.forEach (function(value, key) {
         let option = document.createElement("option");
-        option.text = key;
-        timezonesSelect.add(option);
-    })
+        option.value = value;
+        option.key = key;
+        timezonesSelect.appendChild(option);
+    });
+}
+
+function getTimezoneByValue(searchValue) {
+    for (let [key, value] of timezoneList.entries()) {
+      if (value === searchValue)
+        return key;
+    }
 }
