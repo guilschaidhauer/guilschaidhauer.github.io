@@ -68,8 +68,9 @@ function updateTimezoneCardColor(timezoneCard, colorObject) {
         } else {
             timezoneCardInfo.className = "timezone-info-dark";
         }
-        timezoneCard.style.backgroundColor = colorObject.color;
     }
+
+    timezoneCard.style.backgroundColor = colorObject.color;
 }
 
 function getColorIndex(hoursString) {
